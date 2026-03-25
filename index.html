@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanimozhi Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+/* Navbar */
+nav{
+    padding:20px 10%;
+}
+
+nav h1{
+    color:#38bdf8;
+}
+
+/* Hero */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:100px 10%;
+    gap:60px;
+}
+
+.hero-text h1{
+    font-size:50px;
+}
+
+.hero-text span{
+    color:#38bdf8;
+}
+
+.hero-text p{
+    margin-top:20px;
+    color:#cbd5e1;
+}
+
+/* Image Section */
+.hero-img{
+    text-align:center;
+}
+
+/* ROUND IMAGE */
+.hero-img img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #38bdf8;
+    box-shadow:0 0 25px rgba(56,189,248,0.6);
+    transition:0.4s;
+}
+
+/* Hover Effect */
+.hero-img img:hover{
+    transform:scale(1.08);
+}
+
+/* Upload */
+.upload{
+    margin-top:10px;
+    color:white;
+}
+
+/* About */
+.about{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+    color:#cbd5e1;
+}
+
+/* Social Section */
+.social-section{
+    padding:60px 10%;
+}
+
+.social-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.social-card{
+    width:220px;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+
+.social-card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+.social-card a{
+    text-decoration:none;
+    color:#38bdf8;
+}
+
+/* Colors */
+.linkedin{border-top:4px solid #0077b5;}
+.github{border-top:4px solid #333;}
+.instagram{border-top:4px solid #e1306c;}
+
+/* Responsive */
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <h1>Kanimozhi</h1>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Hello, I'm <span>Kanimozhi</span></h1>
+        <p>I create modern and professional websites with clean UI.</p>
+    </div>
+
+    <div class="hero-img">
+        <img id="profilePic" src="kani.png">
+
+        <input type="file" class="upload" onchange="loadImage(event)">
+    </div>
+
+</section>
+
+<!-- About -->
+<section class="about">
+    <h2>About Me</h2>
+    <p>
+        I am a passionate developer interested in web development.
+        I love creating clean, modern and user-friendly websites.
+    </p>
+</section>
+
+<!-- Social -->
+<section class="social-section">
+    <div class="social-container">
+
+        <div class="social-card linkedin">
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/kanimozhi-karunanithi-kanimozhi-132502375/" target="_blank">Open Profile</a>
+        </div>
+
+        <div class="social-card github">
+            <h3>GitHub</h3>
+            <a href="https://github.com/Kanimozhi-0" target="_blank">View Projects</a>
+        </div>
+
+        <div class="social-card instagram">
+            <h3>Instagram</h3>
+            <a href="https://instagram.com" target="_blank">Visit Page</a>
+        </div>
+
+    </div>
+</section>
+
+<script>
+function loadImage(event){
+    const image = document.getElementById('profilePic');
+    image.src = URL.createObjectURL(event.target.files[0]);
+}
+</script>
+
+</body>
+</html>
